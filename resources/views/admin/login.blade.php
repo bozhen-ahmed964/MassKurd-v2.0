@@ -20,7 +20,9 @@
     </div>
 
 
-    <form method="post" action="#" class="flex justify-center items-center h-screen bg-gray-900">
+    <form method="post" action="{{ url('/adminLoginAuth') }}"
+        class="flex justify-center items-center h-screen bg-gray-900">
+        @csrf
         <div class="max-w-md w-full bg-gray-900 rounded p-6 space-y-4">
             <div class="mb-4">
                 <h2 class="text-xl font-bold text-white">Admin Login Form</h2>
@@ -29,12 +31,12 @@
             <div>
                 <input
                     class="w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600"
-                    type="email" placeholder="Email">
+                    type="email" name="email" placeholder="Email">
             </div>
             <div>
                 <input
                     class="w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600"
-                    type="password" placeholder="Password">
+                    type="password" name="password" placeholder="Password">
             </div>
             <div>
                 <button
