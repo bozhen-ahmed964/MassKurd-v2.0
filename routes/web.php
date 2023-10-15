@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\admin\addMemberController;
 use App\Http\Controllers\admin\adminLoginController;
+use App\Http\Controllers\admin\billingController;
+use App\Http\Controllers\admin\courseController;
+use App\Http\Controllers\admin\settingController;
+use App\Http\Controllers\admin\trainerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +26,14 @@ Route::get('/adminLogin', [App\Http\Controllers\admin\adminLoginController::clas
 Route::post('/adminLoginAuth', [App\Http\Controllers\admin\adminLoginController::class, 'storeAdmin']);
 
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::get('/adminDashboard', [App\Http\Controllers\admin\adminDashboardController::class, 'adminDashboardShow'])->name('adminDashboard');
     Route::post('/logout', [adminLoginController::class, 'adminLogout'])->name('logout');
+
+
+    Route::get('/admin/addMember', [addMemberController::class, 'addMemberView'])->name('addMemberPage');
+    Route::get('/admin/billing', [billingController::class, 'billingView'])->name('billingPage');
+    Route::get('/admin/course', [courseController::class, 'courseView'])->name('coursePage');
+    Route::get('/admin/setting', [settingController::class, 'settingView'])->name('settingPage');
+    Route::get('/admin/trainer', [trainerController::class, 'trainerView'])->name('trainerPage');
 });

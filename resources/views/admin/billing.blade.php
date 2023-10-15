@@ -1,4 +1,4 @@
 @extends('layout.admin')
 @section('content')
-<h3 class="text-white">dashboard</h3>
+<h3 class="text-white">billing</h3>
 @endsection
