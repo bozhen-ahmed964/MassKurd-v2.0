@@ -33,7 +33,7 @@
 
                 <div class="relative sm:mb-0 flex-grow w-full">
                     <label for="weight" class="leading-7 text-sm text-gray-400">Weight</label>
-                    <input type="number" id="weight" name="weight" min="0" value="{{ old(weight) }}"
+                    <input type="number" id="weight" name="weight" min="0" value="{{ old('weight') }}"
                         class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
 
