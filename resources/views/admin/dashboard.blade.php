@@ -51,10 +51,16 @@
 
                                 <td class="px-4 py-3">{{ $data->updated_at->format('Y-m-d') }}</td>
 
-                                <td class="px-4 py-3 space-x-4">
+                                <td class="px-4 py-3 space-x-4 flex items-center">
+
                                     <button class="px-2 py-2 bg-gray-600 text-white rounded"> Profile</button>
                                     <button class="px-2 py-2 bg-blue-700 text-white rounded"> Update</button>
-                                    <button class="px-2 py-2 bg-red-700 text-white rounded"> Delete</button>
+
+                                    <form action="{{ url('/admin/deleteMember/' . $data->id) }}" method="post">
+                                        @csrf
+                                        <button class="px-2 py-2 bg-red-700 text-white rounded">Delete</button>
+                                    </form>
+
                                 </td>
 
                             </tr>

@@ -32,6 +32,17 @@ class addMemberController extends Controller
         $member->save();
 
         return redirect()->back();
+    }
+
+
+    public function deleteMember($id)
+    {
+        $member = Member::find($id);
+        $member->delete();
+        return redirect('/adminDashboard');
 
     }
+
+
+
 }
