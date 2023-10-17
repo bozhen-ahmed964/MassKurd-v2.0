@@ -28,6 +28,7 @@ class addMemberController extends Controller
         $member->game_type = $request->input('game_type');
         $member->pay = $request->input('pay');
         $member->coursePay = $request->input('coursePay');
+        $member->updated_at = $request->input('end_date');
         $member->save();
 
         return redirect()->back();
