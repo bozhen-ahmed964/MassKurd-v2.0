@@ -49,7 +49,7 @@
                                     </button>
                                 </td>
 
-                                <td class="px-4 py-3">{{ $data->updated_at->format('Y-m-d') }}</td>
+                                <td class="px-4 py-3">{{ $data->updated_at?->format('Y-m-d') }}</td>
 
                                 <td class="px-4 py-3 space-x-4 flex items-center">
 
