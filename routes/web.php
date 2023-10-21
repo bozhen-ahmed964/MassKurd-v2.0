@@ -33,15 +33,13 @@ Route::middleware(['auth'])->group(function () {
 
 
     // Add member routes
-    Route::get('/admin/addMember', [addMemberController::class, 'addMemberView'])->name('addMemberPage');
-    Route::post('/admin/storeMember', [addMemberController::class, 'storeMember']);
-    Route::post('/admin/deleteMember/{id}', [addMemberController::class, 'deleteMember']);
-    Route::get('/admin/memberInfoUpdate/{id}', [addMemberController::class, 'showUpdateForm']);
-    Route::put('/admin/updateMember/{id}', [addMemberController::class, 'updateMember']);
-
-
-
-
+    Route::prefix('/admin')->group(function () {
+        Route::get('/addMember', [addMemberController::class, 'addMemberView'])->name('addMemberPage');
+        Route::post('/storeMember', [addMemberController::class, 'storeMember']);
+        Route::post('/deleteMember/{id}', [addMemberController::class, 'deleteMember']);
+        Route::get('/memberInfoUpdate/{id}', [addMemberController::class, 'showUpdateForm']);
+        Route::put('/updateMember/{id}', [addMemberController::class, 'updateMember']);
+    });
 
 
 

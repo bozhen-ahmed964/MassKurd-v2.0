@@ -19,16 +19,16 @@ class addMemberController extends Controller
     public function storeMember(Request $request)
     {
         $member = new Member();
-        $member->fullName = $request->input('fullName');
-        $member->phoneNumber = $request->input('phoneNumber');
-        $member->age = $request->input('age');
-        $member->weight = $request->input('weight');
-        $member->height = $request->input('height');
-        $member->gender = $request->input('gender');
-        $member->game_type = $request->input('game_type');
-        $member->pay = $request->input('pay');
-        $member->coursePay = $request->input('coursePay');
-        $member->updated_at = $request->input('end_date');
+        $member->fullName = $request->fullName;
+        $member->phoneNumber = $request->phoneNumber;
+        $member->age = $request->age;
+        $member->weight = $request->weight;
+        $member->height = $request->height;
+        $member->gender = $request->gender;
+        $member->game_type = $request->game_type;
+        $member->pay = $request->pay;
+        $member->coursePay = $request->coursePay;
+        $member->updated_at = $request->end_date;
         $member->save();
 
         return redirect()->back();
@@ -51,16 +51,16 @@ class addMemberController extends Controller
     public function updateMember(Request $request, $id)
     {
         $member = Member::find($id);
-        $member->fullName = $request->input('fullName');
-        $member->phoneNumber = $request->input('phoneNumber');
-        $member->age = $request->input('age');
-        $member->weight = $request->input('weight');
-        $member->height = $request->input('height');
-        $member->gender = $request->input('gender');
-        $member->game_type = $request->input('game_type');
-        $member->pay = $request->input('pay');
-        $member->coursePay = $request->input('coursePay');
-        $member->updated_at = $request->input('end_date');
+        $member->fullName = $request->fullName;
+        $member->phoneNumber = $request->phoneNumber;
+        $member->age = $request->age;
+        $member->weight = $request->weight;
+        $member->height = $request->height;
+        $member->gender = $request->gender;
+        $member->game_type = $request->game_type;
+        $member->pay = $request->pay;
+        $member->coursePay = $request->coursePay;
+        $member->updated_at = $request->end_date;
         $member->update();
         return redirect()->back();
     }

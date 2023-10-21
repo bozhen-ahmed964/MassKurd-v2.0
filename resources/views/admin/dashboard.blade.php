@@ -52,7 +52,8 @@
 
                                     <button class="px-2 py-2 bg-gray-600 text-white rounded"> Profile</button>
 
-                                        <a href="{{ url('admin/memberInfoUpdate/' . $data->id) }}" class="px-2 py-2 bg-blue-700 text-white rounded"> Update</a>
+                                    <a href="{{ url('admin/memberInfoUpdate/' . $data->id) }}"
+                                        class="px-2 py-2 bg-blue-700 text-white rounded"> Update</a>
 
                                     <form action="{{ url('/admin/deleteMember/' . $data->id) }}" method="post">
                                         @csrf
