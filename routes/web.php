@@ -31,20 +31,27 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/adminDashboard', [App\Http\Controllers\admin\adminDashboardController::class, 'adminDashboardShow'])->name('adminDashboard');
     Route::post('/logout', [adminLoginController::class, 'adminLogout'])->name('logout');
 
-
     // Add member routes
     Route::prefix('/admin')->group(function () {
+
+        Route::get('/billing', [billingController::class, 'billingView'])->name('billingPage');
+        Route::get('/course', [courseController::class, 'courseView'])->name('coursePage');
+        Route::get('/setting', [settingController::class, 'settingView'])->name('settingPage');
+
+
+        // Member functoins
         Route::get('/addMember', [addMemberController::class, 'addMemberView'])->name('addMemberPage');
         Route::post('/storeMember', [addMemberController::class, 'storeMember']);
         Route::post('/deleteMember/{id}', [addMemberController::class, 'deleteMember']);
         Route::get('/memberInfoUpdate/{id}', [addMemberController::class, 'showUpdateForm']);
         Route::put('/updateMember/{id}', [addMemberController::class, 'updateMember']);
+
+
+        // Trainer functions
+        Route::get('/trainer', [trainerController::class, 'trainerView'])->name('trainerPage');
+        Route::post('/addTrainer',[trainerController::class, 'addTrainer'])->name('addTrainer');
+
+
+
     });
-
-
-
-    Route::get('/admin/billing', [billingController::class, 'billingView'])->name('billingPage');
-    Route::get('/admin/course', [courseController::class, 'courseView'])->name('coursePage');
-    Route::get('/admin/setting', [settingController::class, 'settingView'])->name('settingPage');
-    Route::get('/admin/trainer', [trainerController::class, 'trainerView'])->name('trainerPage');
 });
