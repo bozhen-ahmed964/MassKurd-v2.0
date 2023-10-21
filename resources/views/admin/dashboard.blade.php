@@ -1,10 +1,7 @@
 @extends('layout.admin')
 @section('content')
     <section class="text-gray-400 bg-gray-900 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-white">Dashboard</h1>
-            </div>
+        <div class="container px-5 py-14 mx-auto space-y-5">
             <div class="lg:w-10/5 w-full mx-auto overflow-auto">
                 <table class="table-auto w-full min-w-max text-left whitespace-no-wrap">
                     <thead>
@@ -68,6 +65,7 @@
                     </tbody>
                 </table>
             </div>
+            {{ $memberData->links() }}
         </div>
     </section>
 @endsection

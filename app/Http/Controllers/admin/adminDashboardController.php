@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class adminDashboardController extends Controller
 {
     public function adminDashboardShow(){
-        $memberData = Member::all();
+        $memberData = Member::paginate(10);
         return view('admin.dashboard' , compact('memberData'));
     }
 }
