@@ -41,9 +41,9 @@
                 <div class="py-8 px-4 flex flex-wrap gap-5">
                     @foreach ($trainer as $trainerData)
                         <div class="h-full flex items-start">
-                            <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none">
+                            <div class="w-20 flex-shrink-0 flex flex-col text-center leading-none">
                                 <span
-                                    class="text-gray-400 pb-2 mb-2 border-b-2 border-gray-700">{{ $trainerData->created_at->format('M') }}</span>
+                                    class="text-gray-400 pb-2 mb-2 border-b-2 border-gray-700">{{ $trainerData->created_at->format('Y-M') }}</span>
                                 <span
                                     class="font-medium text-lg leading-none text-gray-300 title-font">{{ $trainerData->created_at->format('d') }}</span>
                             </div>
