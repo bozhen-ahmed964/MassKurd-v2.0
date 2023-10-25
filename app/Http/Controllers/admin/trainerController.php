@@ -25,4 +25,11 @@ class trainerController extends Controller
         $trainerData->save();
         return redirect()->back();
     }
+
+    public function deleteTrainer($id)
+    {
+        $trainerData = Trainer::find($id);
+        $trainerData->delete();
+        return redirect()->back();
+    }
 }

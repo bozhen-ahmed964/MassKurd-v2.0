@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
         // Trainer functions
         Route::get('/trainer', [trainerController::class, 'trainerView'])->name('trainerPage');
         Route::post('/addTrainer',[trainerController::class, 'addTrainer'])->name('addTrainer');
+        Route::post('/deleteTrainer/{id}' ,[trainerController::class, 'deleteTrainer'])->name('deleteTrainer');
 
 
 
