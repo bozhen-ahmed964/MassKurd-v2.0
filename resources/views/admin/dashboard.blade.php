@@ -50,7 +50,8 @@
 
                                 <td class="px-4 py-3 space-x-4 flex items-center">
 
-                                    <button class="px-2 py-2 bg-gray-600 text-white rounded"> Profile</button>
+                                    <a href="{{ route('showProfile', ['id' => $data->id]) }}"
+                                        class="px-2 py-2 bg-gray-600 text-white rounded"> Profile</a>
 
                                     <a href="{{ url('admin/memberInfoUpdate/' . $data->id) }}"
                                         class="px-2 py-2 bg-blue-700 text-white rounded"> Update</a>

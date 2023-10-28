@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\addMemberController;
 use App\Http\Controllers\admin\adminLoginController;
 use App\Http\Controllers\admin\billingController;
 use App\Http\Controllers\admin\courseController;
+use App\Http\Controllers\admin\profileController;
 use App\Http\Controllers\admin\settingController;
 use App\Http\Controllers\admin\trainerController;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/setting', [settingController::class, 'settingView'])->name('settingPage');
 
 
-        // Member functoins
+        // Member functions
         Route::get('/addMember', [addMemberController::class, 'addMemberView'])->name('addMemberPage');
         Route::post('/storeMember', [addMemberController::class, 'storeMember']);
         Route::post('/deleteMember/{id}', [addMemberController::class, 'deleteMember']);
@@ -51,6 +52,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/trainer', [trainerController::class, 'trainerView'])->name('trainerPage');
         Route::post('/addTrainer',[trainerController::class, 'addTrainer'])->name('addTrainer');
         Route::post('/deleteTrainer/{id}' ,[trainerController::class, 'deleteTrainer'])->name('deleteTrainer');
+
+        // Member profile
+        Route::get('profile/{id}' , [profileController::class, 'showProfile'])->name('showProfile');
 
 
 
