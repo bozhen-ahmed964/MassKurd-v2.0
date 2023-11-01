@@ -14,4 +14,9 @@ class Trainer extends Model
         'phoneNumber',
         'pay',
     ];
+
+    public function member()
+    {
+        return $this->hasMany(Member::class, 'trainer_id');
+    }
 }

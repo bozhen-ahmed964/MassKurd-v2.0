@@ -88,7 +88,7 @@
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Trainer</div>
-                                <div class="px-4 py-2">Trainer Name</div>
+                                <div class="px-4 py-2">{{ $profileData->trainer->trainerName }}</div>
                             </div>
                         </div>
                     </div>

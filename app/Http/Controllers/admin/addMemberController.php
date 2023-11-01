@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Trainer;
 
 class addMemberController extends Controller
 {
@@ -12,7 +13,8 @@ class addMemberController extends Controller
 
     public function addMemberView()
     {
-        return view('admin.addMember');
+        $trainers = Trainer::all();
+        return view('admin.addMember', ['trainers' => $trainers]);
     }
 
 
@@ -27,6 +29,7 @@ class addMemberController extends Controller
         $member->gender = $request->gender;
         $member->game_type = $request->game_type;
         $member->pay = $request->pay;
+        $member->trainer_id = $request->trainer_id;
         $member->coursePay = $request->coursePay;
         $member->updated_at = $request->end_date;
         $member->save();
@@ -43,9 +46,12 @@ class addMemberController extends Controller
     }
 
 
-    public function showUpdateForm($id){
+    public function showUpdateForm($id)
+    {
+
         $memberData = Member::find($id);
-        return view('admin.updateMember' , compact('memberData'));
+        $trainers = Trainer::all();
+        return view('admin.updateMember', ['memberData' => $memberData, 'trainers' => $trainers]);
     }
 
     public function updateMember(Request $request, $id)
@@ -59,6 +65,7 @@ class addMemberController extends Controller
         $member->gender = $request->gender;
         $member->game_type = $request->game_type;
         $member->pay = $request->pay;
+        $member->trainer_id = $request->trainer_id;
         $member->coursePay = $request->coursePay;
         $member->updated_at = $request->end_date;
         $member->update();

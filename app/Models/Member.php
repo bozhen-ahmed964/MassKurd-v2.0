@@ -19,4 +19,11 @@ class Member extends Model
         'pay',
         'coursePay'
     ];
+
+
+    public function trainer(){
+      return  $this->belongsTo(Trainer::class,'trainer_id');
+    }
+
+
 }

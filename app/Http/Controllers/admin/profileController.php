@@ -10,7 +10,7 @@ class profileController extends Controller
 {
     public function showProfile($id)
     {
-        $profileData = Member::find($id);
+        $profileData = Member::with('trainer')->find($id);
         return view('admin.profile', compact('profileData'));
     }
 }

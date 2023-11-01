@@ -101,9 +101,19 @@
                     <input type="date" id="end_date" name="end_date" min="0" value="{{ old('end_date' , $memberData->updated_at->format('Y-m-d')) }}"
                         class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
+
+                <div class="relative sm:mb-0 flex-grow w-full">
+                    <label class="block text-sm text-grey-700 font-medium">Select Trainer</label>
+                    <select name="trainer_id" required
+                        class="rounded border w-full border-gray-700 focus:ring-2 focus:ring-indigo-900 bg-transparent appearance-none py-2 focus:outline-none focus:border-indigo-500 text-white pl-3 pr-10">
+                        @foreach ($trainers as $trainer)
+                            <option value="{{ $trainer->id }}">{{ $trainer->trainerName }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
-            
+
             {{-- add button --}}
             <div class="flex justify-end">
                 <button type="submit"
