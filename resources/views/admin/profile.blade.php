@@ -5,12 +5,7 @@
             {{-- picture section --}}
             <div class="w-full md:w-3/12 md:mx-2">
                 <div class="rounded">
-                    <div class="image overflow-hidden">
-                        <img class="h-auto rounded w-full mx-auto"
-                            src="https://cdn.britannica.com/63/215263-050-6C78005B/American-actor-Joaquin-Phoenix-2020.jpg"
-                            alt="userImage">
-                    </div>
-                    <h1 class="text-white px-2 py-2 bg-gray-800 rounded font-bold text-xl leading-8 my-1">
+                    <h1 class="text-white px-2 py-2 bg-gray-800 rounded font-bold text-xl leading-8">
                         {{ $profileData->fullName }}</h1>
                     <ul class="bg-gray-800 text-gray-600 py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li class="flex items-center py-3">
@@ -88,7 +83,7 @@
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Trainer</div>
-                                <div class="px-4 py-2">{{ $profileData->trainer->trainerName }}</div>
+                                <div class="px-4 py-2">{{ $profileData->trainer?->trainerName }}</div>
                             </div>
                         </div>
                     </div>

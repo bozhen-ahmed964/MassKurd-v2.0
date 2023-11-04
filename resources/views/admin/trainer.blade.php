@@ -51,8 +51,8 @@
                                 <h2 class="tracking-widest text-xs title-font font-medium text-indigo-400 mb-1">Trainer</h2>
                                 <h1 class="title-font text-xl font-medium text-white mb-3">{{ $trainerData->trainerName }}
                                 </h1>
-                                <p class="leading-relaxed mb-5">{{ $trainerData->phoneNumber }} | {{ $trainerData->age }} |
-                                    Course Give</p>
+                                <p class="leading-relaxed mb-5">Phone :{{ $trainerData->phoneNumber }} | Age : {{ $trainerData->age }} |
+                                    Course Give : {{ $trainerData->member->count() }}</p>
                                 <p class="leading-relaxed mb-5">{{ $trainerData->pay }} IQD</p>
                                 <form action="{{ route('deleteTrainer', ['id' => $trainerData->id]) }}" method="post">
                                     @csrf
